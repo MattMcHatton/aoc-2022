@@ -13,11 +13,5 @@ end
 # star 1
 puts elf_cals_list.max
 
-current_cals = 0
-elf_cals_list.max(3).each do |cals|
-    current_cals += cals
-end
-
 #star 2
-puts current_cals
-
+puts elf_cals_list.max(3).sum()
