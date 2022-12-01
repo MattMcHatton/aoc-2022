@@ -15,3 +15,6 @@ puts elf_cals_list.max
 
 #star 2
 puts elf_cals_list.max(3).sum()
+#also star 2
+puts elf_cals_list.max(3).inject(:+)
+
