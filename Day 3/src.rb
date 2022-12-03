@@ -10,7 +10,6 @@ def get_char_priority (char)
 end 
 
 def get_priority(line)
-    letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lines = split_line(line)
     common_char = (lines[0].chars & lines[1].chars).join
     return get_char_priority(common_char)
