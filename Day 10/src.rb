@@ -8,41 +8,40 @@ cycle = 0
 register = 1
 cycle_vals = {}
 
-# lines = File.readlines("data.txt",chomp: true)
-# lines.each do |line|
-#     # print("=======================\n")
-#     if line.split(" ").length > 1
-#         cmd = line.split(" ")[0]
-#         amt = line.split(" ")[1].to_i
-#     else
-#         cmd = line
-#         amt = 0
-#     end
-#     # print("Command: #{cmd}\n")
-#     # print ("Amount: #{amt}\n")
-#     case cmd
-#     when "noop"
-#         # print("Cycle: #{cycle}\n")
-#         # print("Register: #{register}\n")
-#         cycle += 1
-#         strength = register * cycle
-#         cycle_vals[cycle] = [register,strength]
-#     when "addx"
-#         for i in 1..2
-#             # print("Cycle: #{cycle}\n")
-#             # print("Register: #{register}\n")
-#             cycle += 1
-#             strength = register * cycle
-#             if i > 1
-#                 register += amt
-#             end
-#             cycle_vals[cycle] = [register,strength]
-#             sprite_pos += register            
-#         end
-#     end
-#     # print("End of cycle #{cycle}. Register is #{register}\n")
-#     # print("=======================\n")
-# end
+lines = File.readlines("data.txt",chomp: true)
+lines.each do |line|
+    # print("=======================\n")
+    if line.split(" ").length > 1
+        cmd = line.split(" ")[0]
+        amt = line.split(" ")[1].to_i
+    else
+        cmd = line
+        amt = 0
+    end
+    # print("Command: #{cmd}\n")
+    # print ("Amount: #{amt}\n")
+    case cmd
+    when "noop"
+        # print("Cycle: #{cycle}\n")
+        # print("Register: #{register}\n")
+        cycle += 1
+        strength = register * cycle
+        cycle_vals[cycle] = [register,strength]
+    when "addx"
+        for i in 1..2
+            # print("Cycle: #{cycle}\n")
+            # print("Register: #{register}\n")
+            cycle += 1
+            strength = register * cycle
+            if i > 1
+                register += amt
+            end
+            cycle_vals[cycle] = [register,strength]
+        end
+    end
+    # print("End of cycle #{cycle}. Register is #{register}\n")
+    # print("=======================\n")
+end
 
 #part 1
 print("#{cycle_vals[20][1]} + #{cycle_vals[60][1]} + #{cycle_vals[100][1]} + #{cycle_vals[140][1]} + #{cycle_vals[180][1]} + #{cycle_vals[220][1]} = #{cycle_vals[20][1] + cycle_vals[60][1] + cycle_vals[100][1] + cycle_vals[140][1] + cycle_vals[180][1] + cycle_vals[220][1]}\n" )
