@@ -67,12 +67,13 @@ def calc_worry(worry, method)
     return (worry / 3).floor
 end
 
+#part 2
+#find common denominator for monkeys
 supermodulo = 1
 monkey_hash.each do |key, val|
     supermodulo *= monkey_hash[key][2]
 end
 
-#part 2
 def calc_worry_2(worry, method, modulo)
 
     method_arr = method.split(" ")
